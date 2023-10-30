@@ -15,6 +15,7 @@ export class DrinksComponent implements OnInit {
   ) {}
   
   drinks: Array<Drink> = [];
+  category: string = 'All';
   alphabet: Array<string> = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
   titleLetter: string = 'A';
 
@@ -31,6 +32,10 @@ export class DrinksComponent implements OnInit {
     this.titleLetter = letter;
   }
 
+  changeCategory(selCategory: string){
+    this.category = selCategory;
+  }
+  
   selectDrink(id: number) {
     this.router.navigate(['detail/drink', id]);
   }

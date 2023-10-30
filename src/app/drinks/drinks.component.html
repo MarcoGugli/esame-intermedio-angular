@@ -1,19 +1,35 @@
 <h1 class="text-center mb-5 text-yellow">Drinks by letter {{titleLetter}}</h1>
 
 <section>
+    <button [class.activeButton]="category == 'Ordinary Drink'" class="bg-button rounded-2 me-1 mb-5" (click)="changeCategory('Ordinary Drink')">Ordinary Drink</button>
+    <button [class.activeButton]="category == 'Cocktail'" class="bg-button rounded-2 me-1 mb-5" (click)="changeCategory('Cocktail')">Cocktail</button>
+    <button [class.activeButton]="category == 'Shake'" class="bg-button rounded-2 me-1 mb-5" (click)="changeCategory('Shake')">Shake</button>
+    <button [class.activeButton]="category == 'Other / Unknown'" class="bg-button rounded-2 me-1 mb-5" (click)="changeCategory('Other / Unknown')">Other / Unknown</button>
+    <button [class.activeButton]="category == 'Cocoa'" class="bg-button rounded-2 me-1 mb-5" (click)="changeCategory('Cocoa')">Cocoa</button>
+    <button [class.activeButton]="category == 'Shot'" class="bg-button rounded-2 me-1 mb-5" (click)="changeCategory('Shot')">Shot</button>
+    <button [class.activeButton]="category == 'Coffee / Tea'" class="bg-button rounded-2 me-1 mb-5" (click)="changeCategory('Coffee / Tea')">Coffee / Tea</button>
+    <button [class.activeButton]="category == 'Homemade Liqueur'" class="bg-button rounded-2 me-1 mb-5" (click)="changeCategory('Homemade Liqueur')">Homemade Liqueur</button>
+    <button [class.activeButton]="category == 'Punch / Party Drink'" class="bg-button rounded-2 me-1 mb-5" (click)="changeCategory('Punch / Party Drink')">Punch / Party Drink</button>
+    <button [class.activeButton]="category == 'Beer'" class="bg-button rounded-2 me-1 mb-5" (click)="changeCategory('Beer')">Beer</button>
+    <button [class.activeButton]="category == 'Soft Drink'" class="bg-button rounded-2 me-1 mb-5" (click)="changeCategory('Soft Drink')">Soft Drink</button>
+    <button [class.activeButton]="category == 'All'" class="bg-button rounded-2 me-1 mb-5" (click)="changeCategory('All')">All</button>
+</section>
+<section>
     <div class="container flex-column">
         <div class="row d-flex justify-content-center">
-            <div class="col col-3 rounded-4 m-3 p-3 text-yellow w-fc" *ngFor="let drink of drinks">
-                <h2 class="text-bold border-yellow rounded-4 px-3 py-1 w-fc ms-3">{{drink.strDrink}}</h2>
-                <figure class="m-3" routerLink="/detail/drink" (click)="selectDrink(drink.idDrink)">
-                    <img [src]="drink.strDrinkThumb" alt="" width="250" height="250" class="round shadow">
-                </figure>
-                <p class="text-yellow ms-3">ID: {{drink.idDrink}}</p>
-            </div>
+            <ng-container *ngFor="let drink of drinks">
+                <div class="col col-3 rounded-4 m-3 p-3 text-yellow w-fc" *ngIf="category === 'All' || drink.strCategory === category">
+                    <h2 class="text-bold border-yellow rounded-4 px-3 py-1 w-fc ms-3">{{drink.strDrink}}</h2>
+                    <figure class="m-3" routerLink="/detail/drink" (click)="selectDrink(drink.idDrink)">
+                        <img [src]="drink.strDrinkThumb" alt="" width="250" height="250" class="round shadow">
+                    </figure>
+                    <p class="text-yellow ms-3">ID: {{drink.idDrink}}</p>
+                </div>
+            </ng-container>
         </div>
 
         <div>
-            <button *ngFor="let letter of alphabet" class="bg-yellow rounded-2 me-1 text-red" (click)="getList(letter)">{{letter}}</button>
+            <button *ngFor="let letter of alphabet" class="bg-button rounded-2 me-1" (click)="getList(letter)">{{letter}}</button>
         </div>
 
     </div>

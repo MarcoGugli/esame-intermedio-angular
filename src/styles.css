@@ -181,8 +181,10 @@ app-top-bar h1 {
     color: rgb(237, 184, 7);
 }
 
-.bg-yellow {
-    background-color: rgb(237, 184, 7);
+.bg-button {
+    border: 2px solid rgb(237, 184, 7);
+    color: rgb(237, 184, 7);
+    background-color: rgba(245, 245, 245, 0);
 }
 .bg-green {
     background-color: rgb(24, 143, 9);
@@ -215,6 +217,11 @@ app-top-bar h1 {
     align-items: center;
     border-radius: 48%;
     font-size: 12px;
+}
+
+.activeButton {
+    background-color: rgb(237, 184, 7);
+    color: #580404;
 }
 /*
 Copyright Google LLC. All Rights Reserved.
