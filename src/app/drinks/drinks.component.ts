@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Drink } from '../model/drink.interface';
 import { DrinkService } from '../_services/drink.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-drinks',
@@ -11,7 +10,6 @@ import { Router } from '@angular/router';
 export class DrinksComponent implements OnInit {
   constructor(
     private drinkService: DrinkService,
-    private router: Router
   ) {}
   
   drinks: Array<Drink> = [];
@@ -34,9 +32,5 @@ export class DrinksComponent implements OnInit {
 
   changeCategory(selCategory: string){
     this.category = selCategory;
-  }
-  
-  selectDrink(id: number) {
-    this.router.navigate(['detail/drink', id]);
   }
 }

@@ -2,7 +2,7 @@
     <div class="container flex-column" *ngIf="detailDrink">
         <div class="row">
             <div class="col col-12 d-flex align-items-center">
-                <h1 class="bg-yellow rounded-4 px-3 py-1 w-fc text-red">{{detailDrink.strDrink}}</h1>
+                <h1 class="bg-button rounded-4 px-3 py-1 w-fc text-yellow">{{detailDrink.strDrink}}</h1>
                 <div [class.bg-violet]="detailDrink.strAlcoholic === 'Alcoholic'" [class.bg-green]="detailDrink.strAlcoholic === 'Non alcoholic'" class="alcoholic m-3 h-50 py-3 px-2 text-white">
                     {{detailDrink.strAlcoholic}}
                 </div>
@@ -15,15 +15,15 @@
                 </figure>
             </div>
             <div class="col col-7 flex-column mt-5">
-                <h3 class="bg-yellow rounded-4 px-3 py-1 w-fc text-red" *ngIf="scelta === ''">Ingredients and quantities:
+                <h3 class="bg-button rounded-4 px-3 py-1 w-fc text-yellow mb-3" *ngIf="scelta === ''">Ingredients and quantities:
                 </h3>
-                <h3 class="bg-yellow rounded-4 px-3 py-1 w-fc text-red" *ngIf="scelta === 'IT'">Ingredienti e quantità:
+                <h3 class="bg-button rounded-4 px-3 py-1 w-fc text-yellow mb-3" *ngIf="scelta === 'IT'">Ingredienti e quantità:
                 </h3>
-                <h3 class="bg-yellow rounded-4 px-3 py-1 w-fc text-red" *ngIf="scelta === 'FR'">Ingrédients et quantités:
+                <h3 class="bg-button rounded-4 px-3 py-1 w-fc text-yellow mb-3" *ngIf="scelta === 'FR'">Ingrédients et quantités:
                 </h3>
-                <h3 class="bg-yellow rounded-4 px-3 py-1 w-fc text-red" *ngIf="scelta === 'DE'">Zutaten und Mengen:
+                <h3 class="bg-button rounded-4 px-3 py-1 w-fc text-yellow mb-3" *ngIf="scelta === 'DE'">Zutaten und Mengen:
                 </h3>
-                <h3 class="bg-yellow rounded-4 px-3 py-1 w-fc text-red" *ngIf="scelta === 'ES'">Ingredientes y cantidades:
+                <h3 class="bg-button rounded-4 px-3 py-1 w-fc text-yellow mb-3" *ngIf="scelta === 'ES'">Ingredientes y cantidades:
                 </h3>
 
                 <ul>
@@ -44,15 +44,15 @@
                     <li class="text-yellow" *ngIf="detailDrink.strIngredient15 !== null"><span class="text-bold">{{detailDrink.strIngredient15}}</span> - {{detailDrink.strMeasure15}}</li>
                 </ul>
 
-                <h3 class="bg-yellow rounded-4 px-3 py-1 w-fc text-red mt-5" *ngIf="scelta === ''">Serving glass:
+                <h3 class="bg-button rounded-4 px-3 py-1 w-fc text-yellow mt-5" *ngIf="scelta === ''">Serving glass:
                 </h3>
-                <h3 class="bg-yellow rounded-4 px-3 py-1 w-fc text-red mt-5" *ngIf="scelta === 'IT'">Bicchiere per il servizio:
+                <h3 class="bg-button rounded-4 px-3 py-1 w-fc text-yellow mt-5" *ngIf="scelta === 'IT'">Bicchiere per il servizio:
                 </h3>
-                <h3 class="bg-yellow rounded-4 px-3 py-1 w-fc text-red mt-5" *ngIf="scelta === 'FR'">Verre de service :
+                <h3 class="bg-button rounded-4 px-3 py-1 w-fc text-yellow mt-5" *ngIf="scelta === 'FR'">Verre de service :
                 </h3>
-                <h3 class="bg-yellow rounded-4 px-3 py-1 w-fc text-red mt-5" *ngIf="scelta === 'DE'">Servierglas:
+                <h3 class="bg-button rounded-4 px-3 py-1 w-fc text-yellow mt-5" *ngIf="scelta === 'DE'">Servierglas:
                 </h3>
-                <h3 class="bg-yellow rounded-4 px-3 py-1 w-fc text-red mt-5" *ngIf="scelta === 'ES'">Vaso para servir:
+                <h3 class="bg-button rounded-4 px-3 py-1 w-fc text-yellow mt-5" *ngIf="scelta === 'ES'">Vaso para servir:
                 </h3>
 
                 <h4 class="text-yellow text-bold mt-3 ps-4">{{detailDrink.strGlass}}</h4>
@@ -61,23 +61,23 @@
             <div class="col col-10">
                 <div [ngSwitch]="scelta">
                     <div *ngSwitchCase="''">
-                        <h3 class="bg-yellow rounded-4 px-3 py-1 w-fc text-red mb-3">Instructions: </h3>
+                        <h3 class="bg-button rounded-4 px-3 py-1 w-fc text-yellow mb-3">Instructions: </h3>
                         <p class="text-yellow">{{detailDrink.strInstructions}}</p>
                     </div>
                     <div *ngSwitchCase="'FR'">
-                        <h3 class="bg-yellow rounded-4 px-3 py-1 w-fc text-red mb-3">Instructions: </h3>
+                        <h3 class="bg-button rounded-4 px-3 py-1 w-fc text-yellow mb-3">Instructions: </h3>
                         <p class="text-yellow">{{detailDrink.strInstructionsFR}}</p>
                     </div>
                     <div *ngSwitchCase="'DE'">
-                        <h3 class="bg-yellow rounded-4 px-3 py-1 w-fc text-red mb-3">Anweisungen: </h3>
+                        <h3 class="bg-button rounded-4 px-3 py-1 w-fc text-yellow mb-3">Anweisungen: </h3>
                         <p class="text-yellow">{{detailDrink.strInstructionsDE}}</p>
                     </div>
                     <div *ngSwitchCase="'ES'">
-                        <h3 class="bg-yellow rounded-4 px-3 py-1 w-fc text-red mb-3">Instrucciones: </h3>
-                        <p class="text-yellow">{{detailDrink.strInstructionsIT}}</p>
+                        <h3 class="bg-button rounded-4 px-3 py-1 w-fc text-yellow mb-3">Instrucciones: </h3>
+                        <p class="text-yellow">{{detailDrink.strInstructionsES}}</p>
                     </div>
                     <div *ngSwitchDefault>
-                        <h3 class="bg-yellow rounded-4 px-3 py-1 w-fc text-red mb-3">Istruzioni: </h3>
+                        <h3 class="bg-button rounded-4 px-3 py-1 w-fc text-yellow mb-3">Istruzioni: </h3>
                         <p class="text-yellow">{{detailDrink.strInstructionsIT}}</p>
                     </div>
                 </div>
@@ -85,11 +85,11 @@
             </div>
 
             <div class="col-12">
-                <button (click)="changeLang('IT')" class="bg-yellow rounded-2 me-2 text-red">IT</button>
-                <button (click)="changeLang('')" class="bg-yellow rounded-2 me-2 text-red">EN</button>
-                <button (click)="changeLang('FR')" class="bg-yellow rounded-2 me-2 text-red">FR</button>
-                <button (click)="changeLang('DE')" class="bg-yellow rounded-2 me-2 text-red">DE</button>
-                <button (click)="changeLang('ES')" class="bg-yellow rounded-2 me-2 text-red">ES</button>
+                <button (click)="changeLang('IT')" [disabled]="detailDrink.strInstructionsIT === null" [class.activeButton]="scelta == 'IT'" class="bg-button rounded-2 me-2 text-yellow">IT</button>
+                <button (click)="changeLang('')" [disabled]="detailDrink.strInstructions === null" [class.activeButton]="scelta == ''" class="bg-button rounded-2 me-2 text-yellow">EN</button>
+                <button (click)="changeLang('FR')" [disabled]="detailDrink.strInstructionsFR === null" [class.activeButton]="scelta == 'FR'" class="bg-button rounded-2 me-2 text-yellow">FR</button>
+                <button (click)="changeLang('DE')" [disabled]="detailDrink.strInstructionsDE === null" [class.activeButton]="scelta == 'DE'" class="bg-button rounded-2 me-2 text-yellow">DE</button>
+                <button (click)="changeLang('ES')" [disabled]="detailDrink.strInstructionsES === null" [class.activeButton]="scelta == 'ES'" class="bg-button rounded-2 me-2 text-yellow">ES</button>
             </div>
         </div>
 
